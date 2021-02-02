@@ -7,8 +7,15 @@ class StringAddNumbersTest {
 	private StringAddNumbers obj = new StringAddNumbers();
 
 	@Test
-	void testEmptyString() throws Exception {
+	public void testEmptyString() throws Exception {
 		assertEquals(0, obj.AddStringNumber(""));
+	}
+	
+	@Test
+	public void testOneNumber() throws Exception
+	{
+		String number = "2";
+		assertEquals(2, obj.AddStringNumber(number));
 	}
 
 }

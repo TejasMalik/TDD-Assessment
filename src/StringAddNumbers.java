@@ -9,6 +9,12 @@ public class StringAddNumbers {
 
 		int result = 0;
 
+		
+		for (int i = 0; i<nums.length(); i++) {
+			int number = Integer.parseInt(String.valueOf(nums.charAt(i)));
+			result += number;
+		}
+
 		return result;
 
 	}
