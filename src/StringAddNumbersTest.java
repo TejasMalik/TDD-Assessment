@@ -29,5 +29,12 @@ class StringAddNumbersTest {
 			obj.AddStringNumber("-20");
 		});
 	}
+	
+	@Test
+	public void testNewLineDelimeter() throws Exception
+	{
+		String num = "1\n2,3\n4";
+		assertEquals(10, obj.AddStringNumber(num));
+	}
 
 }

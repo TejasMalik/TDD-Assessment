@@ -8,8 +8,9 @@ public class StringAddNumbers {
 		}
 
 		int result = 0;
+		
 
-		String[] allNumbers = nums.split(",");
+		String[] allNumbers = nums.split(",|\n");
 		for (String str : allNumbers) {
 			int number = Integer.parseInt(str);
 			if (number < 0) {
