@@ -36,5 +36,12 @@ class StringAddNumbersTest {
 		String num = "1\n2,3\n4";
 		assertEquals(10, obj.AddStringNumber(num));
 	}
+	
+	@Test
+	public void testOtherDelimiters() throws Exception
+	{
+		String num = "//;\n6;9";
+		assertEquals(15, obj.AddStringNumber(num));
+	}
 
 }

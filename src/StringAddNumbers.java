@@ -8,13 +8,21 @@ public class StringAddNumbers {
 		}
 
 		int result = 0;
-		
 
-		String[] allNumbers = nums.split(",|\n");
+		String delimiter = "";
+
+		if (nums.charAt(0) == '/' && nums.charAt(1) == '/') {
+			delimiter += nums.charAt(2);
+			nums = nums.substring(4);
+		} else {
+			delimiter = ",|\n";
+		}
+
+		String[] allNumbers = nums.split(delimiter);
 		for (String str : allNumbers) {
 			int number = Integer.parseInt(str);
 			if (number < 0) {
-				throw new Exception("Negative numbers are not allowed.");
+				throw new Exception("Negative numbers like " + Integer.toString(number) + " are not allowed.");
 			}
 			result += number;
 		}
