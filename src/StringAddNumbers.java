@@ -12,6 +12,9 @@ public class StringAddNumbers {
 		String[] allNumbers = nums.split(",");
 		for (String str : allNumbers) {
 			int number = Integer.parseInt(str);
+			if (number < 0) {
+				throw new Exception("Negative numbers are not allowed.");
+			}
 			result += number;
 		}
 
