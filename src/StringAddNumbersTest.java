@@ -1,5 +1,7 @@
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.Random;
+
 import org.junit.jupiter.api.Test;
 
 class StringAddNumbersTest {
@@ -29,19 +31,33 @@ class StringAddNumbersTest {
 			obj.AddStringNumber("-20");
 		});
 	}
-	
+
 	@Test
-	public void testNewLineDelimeter() throws Exception
-	{
+	public void testNewLineDelimeter() throws Exception {
 		String num = "1\n2,3\n4";
 		assertEquals(10, obj.AddStringNumber(num));
 	}
-	
+
 	@Test
-	public void testOtherDelimiters() throws Exception
-	{
+	public void testOtherDelimiters() throws Exception {
 		String num = "//;\n6;9";
 		assertEquals(15, obj.AddStringNumber(num));
+	}
+
+	@Test
+	public void testUnknownNumbers() throws Exception {
+		Random random = new Random();
+		int totalNums = random.nextInt(20);
+		int expectedSum = 0;
+		String nums = "";
+		for (int i = 0; i < totalNums; i++) {
+			int number = random.nextInt(50);
+			nums += String.valueOf(number);
+			if (i < totalNums - 1)
+				nums += ",";
+			expectedSum += number;
+		}
+		assertEquals(expectedSum, obj.AddStringNumber(nums));
 	}
 
 }
