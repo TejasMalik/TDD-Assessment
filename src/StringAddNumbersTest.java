@@ -17,5 +17,12 @@ class StringAddNumbersTest {
 		String number = "2";
 		assertEquals(2, obj.AddStringNumber(number));
 	}
+	
+	@Test
+	public void testCommaDelimiterSum() throws Exception
+	{
+		String num = "5,10";
+		assertEquals(15, obj.AddStringNumber(num));
+	}
 
 }

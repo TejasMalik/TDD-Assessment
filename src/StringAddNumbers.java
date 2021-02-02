@@ -9,9 +9,9 @@ public class StringAddNumbers {
 
 		int result = 0;
 
-		
-		for (int i = 0; i<nums.length(); i++) {
-			int number = Integer.parseInt(String.valueOf(nums.charAt(i)));
+		String[] allNumbers = nums.split(",");
+		for (String str : allNumbers) {
+			int number = Integer.parseInt(str);
 			result += number;
 		}
 
